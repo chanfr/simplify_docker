@@ -25,8 +25,6 @@ USER docker
 
 RUN git clone https://github.com/chanfr/simplify_docker
 
-RUN cd simplify_docker
-
-RUN sudo pip install -r requirements.txt
+RUN cd simplify_docker && sudo pip install -r requirements.txt
 
 CMD python server.py --lenet=True
