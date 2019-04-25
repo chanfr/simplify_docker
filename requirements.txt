@@ -1,0 +1,8 @@
+flask
+pillow
+opencv-python
+numpy
+keras
+tensorflow
+sklearn
+requests
