@@ -12,7 +12,7 @@ RUN updatedb
 RUN pip install --upgrade pip
 
 RUN apt-get install -y sudo
-RUN useradd -ms /bin/bash docker && echo docker:docker | chpasswd && echo "docker ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN useradd -ms /bin/bash docker && echo docker:docker | chpasswd && echo "docker ALL(ALefawefL) ALL" >> /etc/sudoers
 
 
 
@@ -25,6 +25,11 @@ USER docker
 
 RUN git clone https://github.com/chanfr/simplify_docker
 
-RUN cd simplify_docker && sudo pip install -r requirements.txt
 
+USER root
+RUN cd simplify_docker && pip install -r requirements.txt
+
+
+USER docker
+WORKDIR /home/docker/simplify_docker
 CMD python server.py --lenet=True
